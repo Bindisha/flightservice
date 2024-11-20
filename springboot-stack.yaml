@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  springboot-app:
+    image : sachingowd07/couponservice:v5
+    ports:
+      - "9091:9091"
+    environment:
+      DB_HOST: mysql-docker
+      DB_PORT: 3306
+      DB_NAME: servicedb
+      DB_USER: sachin
+      DB_PASSWORD: password
+    networks:
+      - sping-boot-app-swarm
+    deploy:
+      replicas: 3  # Starting with 3 replicas
+      restart_policy:
+        condition: on-failure
+      update_config:
+        parallelism: 1
+        delay: 5s
+      rollback_config:
+        parallelism: 1  
+
+networks:
+  sping-boot-app-swarm:
+    external: true
