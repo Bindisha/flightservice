@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  mysql-docker:
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: servicedb
+      MYSQL_USER: sachin
+      MYSQL_PASSWORD: password
+    ports:
+      - "3306:3306"
+    networks:
+      - sping-boot-app-swarm
+    volumes:
+      - mysql_data:/var/lib/mysql
+    deploy:
+      replicas: 1  # Only one replica of MySQL
+      restart_policy:
+        condition: on-failure       
+
+volumes:
+  mysql_data:
+
+networks:
+  sping-boot-app-swarm:
+    external: true
