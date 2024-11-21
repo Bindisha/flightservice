@@ -2,14 +2,14 @@ version: '3.8'
 
 services:
   springboot-app:
-    image : sachingowd07/couponservice:v5
+    image : bindisha/flightservicerepo:v2
     ports:
       - "9091:9091"
     environment:
       DB_HOST: mysql-docker
       DB_PORT: 3306
       DB_NAME: servicedb
-      DB_USER: sachin
+      DB_USER: bindisha
       DB_PASSWORD: password
     networks:
       - sping-boot-app-swarm
