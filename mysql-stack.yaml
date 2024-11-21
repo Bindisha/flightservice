@@ -5,7 +5,7 @@ services:
     image: mysql
     environment:
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: servicedb
+      MYSQL_DATABASE: reservation
       MYSQL_USER: bindisha
       MYSQL_PASSWORD: password
     ports:
