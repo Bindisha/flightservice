@@ -8,7 +8,7 @@ services:
     environment:
       DB_HOST: mysql-docker
       DB_PORT: 3306
-      DB_NAME: servicedb
+      DB_NAME: reservation
       DB_USER: bindisha
       DB_PASSWORD: password
     networks:
