@@ -15,7 +15,7 @@ services:
             - mysql_data:/var/lib/mysql
 
     springboot-app:
-        image: bindisha/flightservicerepo:v2
+        image: bindisha/flightservicerepo:v6
         container_name: flightservice-container
         ports:
             - "8080:8080"
